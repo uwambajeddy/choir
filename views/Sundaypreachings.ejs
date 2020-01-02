@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="/public/assets/img/imag.jpg">
+    <title>La Fraterinite choir
+    </title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/public/css/all.css">
+
+
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="/public/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/publiccss/owl.theme.default.min.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="/public/css/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="/public/css/Styl.css">
+
+</head>
+
+<body>
+
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+
+    <%include top.ejs%>
+
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+
+    <main>
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <div class="category">
+                        <h2>Preachings Categories</h2>
+                        <ul class="category-list">
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                                <a href="/preachings">Testimony</a>
+
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                                <a href="/Sundaypreachings">Sunday preachings</a>
+
+                            </li>
+
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="400">
+                                <a href="/Dailyword">Daily word</a>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <h3><input type="text" placeholder="search ..."><i class="fas fa-search" type="submit"></i>
+                        </h3>
+                        <h2>Sunday preachings</h2>
+                    </div>
+                    <hr>
+
+
+                    <% if(sundaypreachings.length > 0) { %>
+                    <% sundaypreachings.forEach( function(sundaypreaching){ %>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+
+                        <div class="post-title">
+                            <a href="#"><%=sundaypreaching.sunday_preachings_title%></a>
+                            <p><%=sundaypreaching.sunday_preachings_content%></p>
+                            <button class="btn post-btn"> <i
+                                    class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%=sundaypreaching.sunday_preachings_date%></button>
+                        </div>
+                    </div>
+                    <hr>
+                    <% }); %>
+
+
+                    <% }%>
+                </div>
+                <%include sidebar %>
+            </div>
+        </section>
+
+        <!-- -----------x---------- Site Content -------------x------------>
+
+    </main>
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+
+    <%include footer.ejs%>
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="/public/js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="/public/js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="/public/js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="/public/js/main.js"></script>
+</body>
+
+</html>

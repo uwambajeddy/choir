@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/public/assets/img/imag.jpg">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>La Fraterinite choir
+    </title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/public/css/all.css">
+
+
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="/public/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/public/css/owl.theme.default.min.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="/public/css/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="/public/css/Styl.css">
+
+</head>
+
+<body>
+
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+
+    <%include top.ejs %>
+
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+
+    <main>
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <div class="category">
+                        <h2>activities Category</h2>
+                        <ul class="category-list">
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                                <a href="/activities">Events</a>
+
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                                <a href="/garellies">Garelly</a>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <h3><input type="text" placeholder="search..."><i class="fas fa-search" type="submit"></i>
+                        </h3>
+                        <h2>Events</h2>
+                    </div>
+                    <hr>
+
+
+                    <% if(event.length > 0) { %>
+                    <% event.forEach( function(events){ %>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="/public/uploads/<%= events.name %>" class="img">
+                            </div>
+                            <div class="post-info flex-row">
+
+                                <span><i
+                                        class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%=events.updated_at%></span>
+
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#"><%=events.title%>
+                            </a>
+                            <p><%=events.content%>
+                            </p>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <% }); %>
+                    <% }%>
+
+                </div>
+                <%include sidebar.ejs %>
+            </div>
+        </section>
+
+        <!-- -----------x---------- Site Content -------------x------------>
+
+    </main>
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+
+    <%include footer.ejs%>
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="/public/js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="/public/js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="/public/js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="/public/js/main.js"></script>
+</body>
+
+</html>

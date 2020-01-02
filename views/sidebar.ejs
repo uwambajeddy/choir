@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>La Fraterinite choir
+    </title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/public/css/all.css">
+
+
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="/public/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/publiccss/owl.theme.default.min.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="/public/css/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="/public/css/Styl.css">
+
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h3><input type="text" placeholder="search..."><i class="fas fa-search" type="submit"></i>
+        </h3>
+        <div class="popular-post">
+            <h2>Popular Post</h2>
+
+            <% if(dail_word.length > 0) { %>
+            <% dail_word.forEach( function(dail_words){ %>
+            <div class="post-content" data-aos="flip-up" data-aos-delay="200" style="
+                border:1px solid black;">
+
+
+                <div class="post-title">
+                    <p>category : <a href="/dailyword" style="color: rgb(117, 146, 10)">Daily word</a></p>
+                    <a href=" #"><%=dail_words.dail_word_title%></a><br>
+                    <span><%=dail_words.dail_word_content%></span>
+                </div><br>
+                <div class="post-image">
+
+                    <div class="post-info flex-row">
+
+                        <span>
+                            <i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%=dail_words.dail_word_date%>
+                        </span>
+
+                    </div>
+                </div>
+            </div><br>
+            <% }); %>
+            <% } %>
+
+
+            <% if(sunday_preachings.length > 0) { %>
+            <% sunday_preachings.forEach( function(sunday_preaching){ %>
+            <div class="post-content" data-aos="flip-up" data-aos-delay="200" style="
+            border:1px solid black;">
+
+
+                <div class="post-title">
+                    <p>category : <a href="/sundaypreachings" style="color: green;">sunday preachings</a></p>
+                    <a href="#"><%=sunday_preaching.sunday_preachings_title%></a><br>
+                    <span><%=sunday_preaching.sunday_preachings_content%></span>
+                </div><br>
+                <div class="post-image">
+
+                    <div class="post-info flex-row">
+
+                        <span>
+                            <i
+                                class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%=sunday_preaching.sunday_preachings_date%>
+                        </span>
+
+                    </div>
+                </div>
+            </div><br>
+            <% }); %>
+            <% } %>
+
+            <% if(testimony.length > 0) { %>
+            <% testimony.forEach( function(testimonys){ %>
+            <div class="post-content" data-aos="flip-up" data-aos-delay="200" style="
+                border:1px solid black;">
+
+
+                <div class="post-title">
+                    <p>category : <a href="/preachings" style="color: rgb(13, 23, 168);">testimony</a></p>
+                    <a href="#"><%=testimonys.testimony_name%></a><br>
+                    <span><%=testimonys.testimony_content%></span>
+                </div>
+
+            </div><br>
+            <% }); %>
+            <% } %>
+            <% if(lumen_event.length > 0) { %>
+            <% lumen_event.forEach( function(lumen_events){ %>
+            <div class="post-content" data-aos="flip-up" data-aos-delay="400" style="
+            border:1px solid black;">
+                <div class="post-title">
+                    <p>category : <a href="/lumenevents" style="color: rgb(137, 7, 163);">lumen events</a></p>
+                </div>
+                <div class="post-image">
+                    <div>
+                        <img src="/public/uploads/<%= lumen_events.lumen_name %>" class="img" alt="blog1">
+                    </div>
+                    <div class="post-info flex-row">
+                        <span><i
+                                class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%=lumen_events.lumen_updated_at%></span>
+
+                    </div>
+                </div>
+                <div class="post-title">
+                    <a href="#"><%=lumen_events.lumen_title%></a><br>
+                    <span><%=lumen_events.lumen_content%></span>
+                </div>
+            </div><br>
+
+            <% }); %>
+            <% } %>
+
+            <!--  <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+                <div class="post-image">
+                    <div>
+                        <object data="http://www.amahorochoir.org" type="text/html" class="img"></object>
+                    </div>
+                    <div class="post-info flex-row">
+                        <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                            2019</span>
+                        <span>2 Commets</span>
+                    </div>
+                </div>
+                <div class="post-title">
+                    <a href="#">News about ather ADEPR_REMERA choirs (amahorochoir)</a>
+                </div>
+            </div> -->
+            <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+                <h2>Give us a comment</h2>
+                <div class="form-element">
+                    <form action="/testimoni" method="POST">
+                        <input type="email" name="testimony_email" placeholder="Email" required><br><br>
+                        <input type="text" name="testimony_name" placeholder="your names" required><br><br>
+                        <textarea placeholder="comment here" name="testimony_content" required></textarea>
+                        <button class="btn form-btn" type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="popular-tags">
+                <h2>Popular Tags</h2>
+                <div class="tags flex-row">
+                    <span class="tag" data-aos="flip-up" data-aos-delay="100"><a href="/vision1">vision</a></span>
+                    <span class="tag" data-aos="flip-up" data-aos-delay="200"><a href="/">Members</a></span>
+                    <span class="tag" data-aos="flip-up" data-aos-delay="300"><a href="/activities">Events</a></span>
+                    <span class="tag" data-aos="flip-up" data-aos-delay="400"><a href="/song">songs</a></span>
+                    <span class="tag" data-aos="flip-up" data-aos-delay="500"><a href="/lumenevents">lumen
+                            Events</a></span>
+                    <span class="tag" data-aos="flip-up" data-aos-delay="600"><a href="/garellies">our photos</a></span>
+                    <span class="tag" data-aos="flip-up" data-aos-delay="700"><a href="/aboutus">our
+                            biginning</a></span>
+                    <span class="tag" data-aos="flip-up" data-aos-delay="800"><a href="/mission1">our mission</a></span>
+                </div>
+            </div>
+    </aside>
+
+
+    <!-- Jquery Library file -->
+    <script src="/public/js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="/public/js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="/public/js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="/public/js/main.js"></script>
+</body>
+
+</html>

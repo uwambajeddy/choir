@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Register</title>
+    <style>
+        html {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            padding: 10%;
+            margin-left: 30%;
+        }
+
+        form #link {
+            border: 0;
+            border-radius: 5px;
+            text-decoration: none;
+            border-style: inset;
+            color: #fff;
+            padding: 7px;
+            background-color: rgb(8, 163, 112);
+        }
+
+        .danger {
+            border: 0;
+            border-radius: 5px;
+            text-decoration: none;
+            border-style: inset;
+            color: #fff;
+            padding: 7px;
+            width: 150px;
+            text-align: center;
+            background-color: rgb(235, 0, 0);
+        }
+
+        form .form-group {
+            padding-top: 3%;
+        }
+
+        input[type=text] {
+            border-radius: 3px;
+            border-color: black;
+
+        }
+
+        p a {
+            text-decoration: none;
+            color: rgb(8, 163, 112);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login">
+            <h2>Login</h2>
+            <% if(message.length > 0) { %>
+            <div class="danger"><%= message %></div>
+            <% } %>
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label>Username</label><br>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label><br>
+                    <input type="password" name="password" required>
+                </div><br>
+
+                <button type="submit" id="link">Login</button>
+            </form>
+
+            <br>
+
+        </div>
+    </div>
+</body>
+
+</html>
